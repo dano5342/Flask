@@ -7,12 +7,15 @@
     keep the sometimes prideful and stubborn Dwarves from rash action. The superstitious Dwarves also considered thirteen to be an unlucky number, and as Gandalf had planned to leave on other business, welcomed a fourteenth to fill into their party.
 </p>
 
-    {% for member in company %}
-    
-    {{ loop.index }}
+{% for member in company %}
+
+
 <div class="row featurette">
+
+    {% if loop.index % 2 != 0%}
+
     <div class="col-md-7">
-        <h3>{{member.name}}</h3>
+        <h3> {{ loop.index }} {{member.name}}</h3>
         <p>
             {{member.description}}
         </p>
@@ -20,12 +23,24 @@
     <div class="col-md-5">
         <img class="featurette-image img-responsive" src="{{member.image_source}}"></img>
     </div>
+    {%else%}
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive" src="{{member.image_source}}"></img>
+    </div>
+    <div class="col-md-7">
+        <h3> {{ loop.index }} {{member.name}}</h3>
+        <p>
+            {{member.description}}
+        </p>
+    </div>
+    {% endif %}
 
 </div>
-<hr class="featurette-divider">
-    {% endfor %}
 
-{% endblock %}
+{% if loop.index != 13 %}
+<hr class="featurette-divider"> 
+{% endif %}
+{% endfor %} {% endblock %}
 <!-- This is injection for a page, which is called in the base.html 
     Its a much quicker way of ensuring that HTML is not repeated 
     Over several pages, we can use BLOCKS to make the programming 
