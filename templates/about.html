@@ -1,7 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 
-{{company[0]["name"]}}
-
 <h2>{{page_title}}</h2>
 <p>
     The formation of the group grew out of a meeting Gandalf had with Thorin in Bree which kindled Thorin's interest in recapturing his long lost family inheritance. (Thorin's grandfather had been the king of the Lonely Mountain when Smaug came and took it.)
@@ -9,149 +7,23 @@
     keep the sometimes prideful and stubborn Dwarves from rash action. The superstitious Dwarves also considered thirteen to be an unlucky number, and as Gandalf had planned to leave on other business, welcomed a fourteenth to fill into their party.
 </p>
 
+    {% for member in company %}
+    
+    {{ loop.index }}
 <div class="row featurette">
     <div class="col-md-7">
-        <h3>Thorin Oakenshield</h3>
+        <h3>{{member.name}}</h3>
         <p>
-            Thorin II, also called the Oakenshield, King under the Mountain or the Mountain King,[1] was the son of Thráin II, the older brother of Frerin and Dís, the grandson of King Thrór and the uncle of Fíli and Kíli. Thorin was best known for his deeds as leader
-            of a company that infiltrated the lost Kingdom under the Mountain to take it back from Smaug and for leading an alliance of Men, Dwarves, and Elves in the Battle of the Five Armies.
+            {{member.description}}
         </p>
     </div>
     <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/5/56/Young_Thorin.png/revision/latest?cb=20130315124513"></img>
+        <img class="featurette-image img-responsive" src="{{member.image_source}}"></img>
     </div>
 
 </div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/b/b4/The-Hobbit-Fili-and-Kili.jpg/revision/latest?cb=20110714202952"></img>
-    </div>
-    <div class="col-md-7">
-        <h3>Fili and Kili</h3>
-        <p>
-            Fíli and Kíli were brothers, the youngest of the thirteen dwarves who set out on Thorin Oakenshield's quest along with Gandalf and Bilbo Baggins to reclaim the Lonely Mountain for the Dwarves. Fíli and Kíli were the two most active dwarves of Thorin's
-            company, and apart from Balin, and possibly Bombur, they appeared more frequently as "individual" characters in Tolkien's novel than the rest of Thorin's companions, who were most often named only in "group" references to the entire company.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Óin</h3>
-        <p>Óin was the older brother of Glóin, cousin of Dwalin and Balin, and uncle of Gimli. He usually wore a brown-hooded cloak when travelling. Óin fought in the Battle of Azanulbizar along with Thorin Oakenshield, and in TA 2941 joined with Thorin
-            and Company on the quest to reclaim the Lonely Mountain wearing a brown hood.[2] Óin was one of the Dwarves who bet that Bilbo would come along with them to reclaim the Lonely Mountain. Óin and his brother Glóin were usually in charge of preparing
-            the fire for the Company. He fought in and survived the Battle of the Five Armies, and later settled in the Lonely Mountain along with many other dwarves of The Company of Thorin.</p>
-    </div>
-    <div class="col-md-5"><img src="https://vignette.wikia.nocookie.net/lotr/images/7/7d/Hobbit-poster-oin.jpg/revision/latest?cb=20121103122220"></img>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/f/fc/Gloin_2.jpg/revision/latest?cb=20120908171710"></img>
-    </div>
-    <div class="col-md-7">
-        <h3>Glóin</h3>
-        <p>Glóin son of Gróin was one of the Dwarves of Thorin II Oakenshield's company who set out to reclaim the Lonely Mountain in the Quest of Erebor. He was also the father of Gimli, who became a member of the Fellowship of the Ring. Glóin chiefly appears
-            in The Hobbit as a supporting character. Glóin also appears in The Fellowship of the Ring during the Fellowship's stay in Rivendell.</p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Balin</h3>
-        <p>Balin was a Dwarf leader, the son of Fundin, and elder brother of Dwalin. He was one of the thirteen Dwarves who accompanied Thorin II Oakenshield on the quest to regain the Lonely Mountain. A Dwarf Lord known for his wise counsel and willingness
-            to listen, he was one of Thorin's closest friends and advisors. Balin was distantly related to Thorin, and a descendant of the noble house of Durin. He later went to re-establish the greatest kingdom of the Dwarves, Khazad-dûm, but within
-            five years it was overcome once more by Orcs, and he was killed there along with the rest of his companions.</p>
-    </div>
-    <div class="col-md-5"><img src="https://vignette.wikia.nocookie.net/lotr/images/5/52/Balin.jpg/revision/latest?cb=20120911171656"></img>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/1/1c/Dwalin.jpg/revision/latest?cb=20120911200601"></img>
-    </div>
-    <div class="col-md-7">
-        <h3>Dwalin</h3>
-        <p>Born in TA 2772, two years after the dragon Smaug had desolated Erebor, Dwalin was the son of Fundin and younger brother of Balin. After fighting in the Battle of Azanulbizar at the age of 27, Dwalin accompanied Thrain the Second and Thorin Oakenshield
-            to settle peacefully in the northern Ered Luin. Later in TA 2841, Dwalin, along with his brother Balin, and a few others accompanied Thráin when he left the Ered Luin to visit Erebor. The small party was dogged by the emissaries of Sauron.
-            In TA 2845, Thráin was captured one night when he and his companions sheltered under the eaves of Mirkwood from a black rain. After a fruitless search for their leader, the Dwarves gave up and returned to Thorin to inform him the news.</p>
-    </div>
-</div>
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Ori</h3>
-        <p>Ori lived in Thorin's Halls in the northern Blue Mountains for many years. In the year TA 2941, Ori became a member of Thorin's Company and travelled with Thorin, Gandalf, Bilbo Baggins, and the other dwarves on the quest for the Lonely Mountain,
-            culminating in the death of Smaug. Finally, he and the other dwarves of Thorin's Company fought in the Battle of the Five Armies, and he survived it.[2]</p>
-    </div>
-    <div class="col-md-5"><img src="https://vignette.wikia.nocookie.net/lotr/images/8/81/Ori.jpeg/revision/latest?cb=20130205205637"></img>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/8/89/Dori-markhadlow-p.jpg/revision/latest?cb=20120107052829"></img>
-    </div>
-    <div class="col-md-7">
-        <h3>Dori</h3>
-        <p>Dori was a Dwarf of Durin's Folk, who along with his brothers Nori and Ori travelled with Bilbo Baggins and Thorin Oakenshield as a member of Thorin's Company on the Quest for Erebor, to reclaim the Lonely Mountain from the Dragon Smaug. Dori
-            was among the Dwarves at Bag End who joined in singing about "blunting the knives" and "bending the forks"; as well as accompanying by playing the flute. He was described as “decent fellow despite his grumbling”. He often wore a red-violet
-            coat while on the Quest for Erebor. He was noted by Thorin to be the strongest of the thirteen companions.[1]</p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Nori</h3>
-        <p>Nori was a Dwarf of Durin's folk who lived in the northern Blue Mountains in Thorin's Halls and later the restored Lonely Mountain. He had two brothers named Dori and Ori, and was a remote kinsman of Thorin Oakenshield. His hood was purple, he
-            played the flute, and he was very fond of regular and plentiful meals like his hobbit friend, Bilbo Baggins.</p>
-    </div>
-    <div class="col-md-5"><img src="https://vignette.wikia.nocookie.net/lotr/images/d/db/Nori-jedbrophy-p.jpg/revision/latest?cb=20120107053122"></img>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/b/b5/Bifur.jpg/revision/latest?cb=20110731144825"></img>
-    </div>
-    <div class="col-md-7">
-        <h3>Bifur</h3>
-        <p>Bifur was a Dwarf of the late-Third Age. He is best known for being a companion to Bilbo Baggins and Thorin Oakenshield on the quest to regain the Lonely Mountain, along with his cousins Bofur and Bombur.</p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Bofur</h3>
-        <p>Bofur was a Dwarf of the late-Third Age. He is best known for being companions to Bilbo Baggins, Thorin Oakenshield and Gandalf on the quest to reclaim Lonely Mountain from the dragon Smaug, along with his brother Bombur and cousin Bifur.</p>
-    </div>
-    <div class="col-md-5"><img src="https://vignette.wikia.nocookie.net/lotr/images/7/77/Bofur.jpg/revision/latest?cb=20110731144758"></img>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/5/5f/Bombur-stephenhunter-p.jpg/revision/latest?cb=20120107054531"></img>
-    </div>
-    <div class="col-md-7">
-        <h3>Bombur</h3>
-        <p>Bombur's parentage is unknown; the only familial connections mentioned are his brother Bofur and his cousin Bifur. Bombur was not of Durin's line although he was descended from Dwarves of Moria. His birth year is also unknown, however, from Bilbo
-            Baggins' account from the quest to Erebor it is known that the brothers Fíli and Kíli were the youngest of the 13 "by some fifty years" and that after Thorin had been captured, Balin was "the eldest left". Since Fíli was born in TA 2859 and
-            Balin was born in TA 2763, this would put Bombur's birth between 2763 and 2809, and he would have been between 132 and 178 years old during the quest to Erebor. Prior to the quest Bombur probably lived in the Blue Mountains with Thorin after
-            the loss of Thráin II.</p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Gandalf</h3>
-        <p>Gandalf (Norse; IPA: [gand:alf] - "Elf of the Wand" or "Wand-elf") the Grey, later known as Gandalf the White, and originally named Olórin (Quenya; IPA: [oˈloːrin] - "Dreamer" or "Of Dreams"), was an Istar (wizard), sent by the West in the Third
-            Age to combat the threat of Sauron. He joined Thorin and his company to reclaim the Lonely Mountain from Smaug, convoked the Fellowship of the Ring to destroy the One Ring, and led the Free Peoples in the final campaign of the War of the Ring.</p>
-    </div>
-    <div class="col-md-5"><img src="https://vignette.wikia.nocookie.net/lotr/images/e/e7/Gandalf_the_Grey.jpg/revision/latest?cb=20121110131754"></img>
-    </div>
-</div>
+<hr class="featurette-divider">
+    {% endfor %}
 
 {% endblock %}
 <!-- This is injection for a page, which is called in the base.html 
