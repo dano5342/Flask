@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Flask</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li>
+                <!--The above and below code is used for injecting from a VIEW found in the 
+            run.py file. This is case sensitive and MUST be called within the run file.
+            -->
+                <a href="{{ url_for('about') }}">About</a>
+            </li>
+            <li>
+                <a href="{{ url_for('contact') }}">Contact</a>
+            </li>
+            <li>
+                <a href="{{ url_for('careers') }}">Careers</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- The below code is an area for injection, the % sign is for statements, that 
+    control the flow of the template. whereas Double {'s contain an expression 
+    Quick note that the Curly BRACERSx2 cannot be used in HTML comments when being read from a 
+    python file, this will cause the code to break-->
+    {% block content %} 
+        {% endblock %}
+
+</body>
+
+</html>
